@@ -1,0 +1,50 @@
+name: Build UT472 NoLED Stage 1
+
+on:
+  push:
+    branches: ["ut472-noled-stage1"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Vial-QMK
+        uses: actions/checkout@v4
+        with:
+          repository: vial-kb/vial-qmk
+          ref: vial
+          path: vial-qmk
+          submodules: recursive
+
+      - name: Overlay UT472 NoLED Stage 1
+        run: |
+          rm -rf vial-qmk/keyboards/keyhive/ut472_noled
+          mkdir -p vial-qmk/keyboards/keyhive
+          cp -R keyboards/keyhive/ut472_noled vial-qmk/keyboards/keyhive/ut472_noled
+
+      - name: Install QMK CLI and AVR toolchain
+        working-directory: vial-qmk
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-avr avr-libc binutils-avr
+          python3 -m pip install --user qmk
+          avr-gcc --version
+
+      - name: Build Stage 1 default firmware
+        working-directory: vial-qmk
+        run: make keyhive/ut472_noled:default
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut472_noled-stage1-default
+          path: vial-qmk/.build/keyhive_ut472_noled_default.hex
+          if-no-files-found: error
+
+      - name: Firmware size
+        working-directory: vial-qmk
+        run: avr-size .build/keyhive_ut472_noled_default.elf
