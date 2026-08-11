@@ -8,10 +8,8 @@
     "device_version": "0.0.2"
   },
   "features": {
-    "bootmagic": true,
     "extrakey": true,
-    "mousekey": true,
-    "nkro": true
+    "mousekey": true
   },
   "qmk": {
     "locking": {
