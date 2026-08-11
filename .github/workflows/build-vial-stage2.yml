@@ -25,6 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: vial-kb/vial-qmk
+          ref: vial
           path: vial-qmk
           submodules: recursive
 
@@ -33,6 +34,14 @@ jobs:
           rm -rf vial-qmk/keyboards/keyhive/ut472_noled
           mkdir -p vial-qmk/keyboards/keyhive
           cp -R keyboards/keyhive/ut472_noled vial-qmk/keyboards/keyhive/ut472_noled
+
+      - name: Verify Vial keymap
+        working-directory: vial-qmk
+        run: |
+          test -f keyboards/keyhive/ut472_noled/keymaps/vial/keymap.c
+          test -f keyboards/keyhive/ut472_noled/keymaps/vial/rules.mk
+          test -f keyboards/keyhive/ut472_noled/keymaps/vial/config.h
+          test -f keyboards/keyhive/ut472_noled/keymaps/vial/vial.json
 
       - name: Build Vial firmware
         working-directory: vial-qmk
