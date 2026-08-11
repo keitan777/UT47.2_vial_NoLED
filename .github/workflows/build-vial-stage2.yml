@@ -12,10 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install AVR toolchain
+      - name: Install AVR toolchain and QMK CLI
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc-avr avr-libc
+          sudo apt-get install -y gcc-avr avr-libc binutils-avr
+          python3 -m pip install --user qmk
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          qmk --version
+          avr-gcc --version
 
       - name: Checkout Vial-QMK
         uses: actions/checkout@v4
