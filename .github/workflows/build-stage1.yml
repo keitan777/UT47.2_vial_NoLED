@@ -19,15 +19,17 @@ jobs:
           path: vial-qmk
           submodules: recursive
 
+      - name: Install AVR toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y avr-gcc avr-libc binutils-avr
+          avr-gcc --version
+
       - name: Overlay UT472 NoLED Stage 1
         run: |
           rm -rf vial-qmk/keyboards/keyhive/ut472_noled
           mkdir -p vial-qmk/keyboards/keyhive
           cp -R keyboards/keyhive/ut472_noled vial-qmk/keyboards/keyhive/ut472_noled
-
-      - name: Install QMK CLI
-        working-directory: vial-qmk
-        run: python3 -m pip install --user qmk
 
       - name: Build Stage 1 default firmware
         working-directory: vial-qmk
