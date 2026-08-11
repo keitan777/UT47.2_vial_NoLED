@@ -1,0 +1,54 @@
+name: Build Vial firmware
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Vial-QMK
+        uses: actions/checkout@v4
+        with:
+          repository: vial-kb/vial-qmk
+          ref: vial
+          path: vial-qmk
+          submodules: recursive
+
+      - name: Install QMK dependencies
+        working-directory: vial-qmk
+        run: |
+          python3 -m pip install --user qmk
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          ./util/qmk_install.sh -y
+          qmk setup -H ./
+
+      - name: Overlay UT472 NoLED keyboard
+        run: |
+          rm -rf vial-qmk/keyboards/keyhive/ut472_noled
+          mkdir -p vial-qmk/keyboards/keyhive
+          cp -R keyboards/keyhive/ut472_noled vial-qmk/keyboards/keyhive/ut472_noled
+
+      - name: Build Vial firmware
+        working-directory: vial-qmk
+        run: |
+          qmk compile -kb keyhive/ut472_noled -km vial
+
+      - name: Firmware size
+        working-directory: vial-qmk
+        run: |
+          avr-size .build/keyhive_ut472_noled_vial.elf
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut472_noled-vial-firmware
+          path: |
+            vial-qmk/.build/keyhive_ut472_noled_vial.hex
+          if-no-files-found: error
