@@ -2,6 +2,8 @@ VIA_ENABLE = yes
 VIAL_ENABLE = yes
 
 # AVR size reduction. Keep features required by this build.
+LTO_ENABLE = yes
+QMK_SETTINGS = no
 NO_ACTION_ONESHOT = yes
 NO_ACTION_MACRO = yes
 NO_ACTION_FUNCTION = yes
