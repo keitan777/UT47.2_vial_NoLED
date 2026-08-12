@@ -6,7 +6,7 @@ VIA_ENABLE = yes
 VIAL_ENABLE = yes
 
 # Features required by the existing UT47.2 keymap
-MOUSEKEY_ENABLE = yes
+MOUSEKEY_ENABLE = no
 EXTRAKEY_ENABLE = yes
 SPACE_CADET_ENABLE = yes
 
