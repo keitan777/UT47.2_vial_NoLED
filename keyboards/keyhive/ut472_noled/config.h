@@ -28,4 +28,8 @@
 /* Four layers are used, so 8-bit layer state is sufficient. */
 #define LAYER_STATE_8BIT
 
-/* Intentionally no RGB/WS2812 definitions in Stage 2 NoLED. */
+/* Vial dynamic feature limits for this test build. */
+#define VIAL_TAP_DANCE_ENTRIES 4
+#define VIAL_COMBO_ENTRIES 8
+
+/* No RGB/WS2812/LED functionality. */
