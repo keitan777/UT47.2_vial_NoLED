@@ -14,5 +14,9 @@
 /* Vial macro storage. */
 #define DYNAMIC_KEYMAP_MACRO_COUNT 8
 
+/* Vial Combo and Tap Dance storage. */
+#define VIAL_COMBO_ENTRIES 8
+#define VIAL_TAP_DANCE_ENTRIES 8
+
 /* Keep Vial communication/storage close to the minimal known-good setup. */
 #define VIAL_KEY_OVERRIDE_ENTRIES 0
