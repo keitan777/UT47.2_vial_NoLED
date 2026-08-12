@@ -27,7 +27,7 @@ UT47.2をベースに、RGB/LED機能を削除した独立Vial-QMKキーボー�
 - NKRO: 無効
 - Mousekey: 有効
 - ExtraKey: 有効
-- Console / Command / Audio / Space Cadet / Grave Escape / Magic: 無効
+- Console / Command / Audio / Space Cadet / Magic: 無効
 - QMK Settings / Key Override / Repeat Key: 無効
 - LTO: 有効
 - Layer state: 8-bit
