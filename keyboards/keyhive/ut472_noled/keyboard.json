@@ -2,11 +2,6 @@
   "keyboard_name": "UT47.2 NoLED",
   "manufacturer": "Keyhive",
   "maintainer": "qmk",
-  "usb": {
-    "vid": "0xA103",
-    "pid": "0x0472",
-    "device_version": "0.0.2"
-  },
   "features": {
     "extrakey": true,
     "mousekey": true
