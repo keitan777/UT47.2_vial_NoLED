@@ -10,8 +10,16 @@
 /* USB Device descriptor is defined by keyboard.json. */
 #define DEBOUNCE 5
 
-/* Mechanical locking support */
-#define LOCKING_SUPPORT_ENABLE
-#define LOCKING_RESYNC_ENABLE
+/* AVR SRAM optimization: these features are not used by the Vial keymap. */
+#define NO_DEBUG
+#define NO_PRINT
+#define NO_ACTION_ONESHOT
 
-/* Intentionally no RGB/WS2812 definitions in Stage 1. */
+/* Mechanical lock-switch support is not used; regular KC_CAPS is used. */
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+/* Four layers are used, so 8-bit layer state is sufficient. */
+#define LAYER_STATE_8BIT
+
+/* Intentionally no RGB/WS2812 definitions in Stage 2 NoLED. */
