@@ -12,6 +12,4 @@
 #define LAYER_STATE_8BIT
 
 /* Keep Vial communication/storage close to the minimal known-good setup. */
-#define VIAL_TAP_DANCE_ENTRIES 0
-#define VIAL_COMBO_ENTRIES 0
 #define VIAL_KEY_OVERRIDE_ENTRIES 0
