@@ -2,8 +2,8 @@
 LTO_ENABLE = yes
 
 # Features required by the existing UT47.2 keymap
-MOUSEKEY_ENABLE = yes
-EXTRAKEY_ENABLE = yes
+# Mouse keys are intentionally disabled; the FN3 mouse functions were removed.
+MOUSEKEY_ENABLE = no
 SPACE_CADET_ENABLE = yes
 
 # Vial dynamic features for the next test
