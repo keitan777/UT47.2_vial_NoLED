@@ -11,5 +11,8 @@
 #define DYNAMIC_KEYMAP_LAYER_COUNT 4
 #define LAYER_STATE_8BIT
 
+/* Vial macro storage. */
+#define DYNAMIC_KEYMAP_MACRO_COUNT 8
+
 /* Keep Vial communication/storage close to the minimal known-good setup. */
 #define VIAL_KEY_OVERRIDE_ENTRIES 0
