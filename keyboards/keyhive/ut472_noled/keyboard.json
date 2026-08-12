@@ -3,8 +3,7 @@
   "manufacturer": "Keyhive",
   "maintainer": "qmk",
   "features": {
-    "extrakey": true,
-    "mousekey": true
+    "extrakey": true
   },
   "qmk": {
     "locking": {
