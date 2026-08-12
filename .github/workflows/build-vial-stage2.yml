@@ -2,7 +2,7 @@ name: Build UT472 NoLED Stage 2 Vial
 
 on:
   push:
-    branches: ["ut472-noled-stage1"]
+    branches: ["ut472-noled-stage1", "main"]
   workflow_dispatch:
 
 jobs:
