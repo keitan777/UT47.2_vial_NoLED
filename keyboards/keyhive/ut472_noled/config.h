@@ -11,8 +11,6 @@
 #define DEBOUNCE 5
 
 /* AVR SRAM optimization: these features are not used by the Vial keymap. */
-#define NO_DEBUG
-#define NO_PRINT
 #define NO_ACTION_ONESHOT
 
 /* Mechanical lock-switch support is not used; regular KC_CAPS is used. */
