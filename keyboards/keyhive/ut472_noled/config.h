@@ -8,14 +8,11 @@
 #pragma once
 
 /* USB Device descriptor parameters.
- * Keep the original UT47.2 descriptor definitions for USB compatibility.
+ * Keep VID/PID in keyboard.json; only legacy string macros required by
+ * the current Vial-QMK descriptor code are retained here.
  */
-#define VENDOR_ID       0xA103
-#define PRODUCT_ID      0x0472
-#define DEVICE_VER      0x0002
-#define MANUFACTURER    Keyhive
-#define PRODUCT         UT47.2 NoLED
-#define DESCRIPTION     An awesome 40% keyboard
+#define MANUFACTURER    "Keyhive"
+#define PRODUCT         "UT47.2 NoLED"
 
 #define DEBOUNCE 5
 
