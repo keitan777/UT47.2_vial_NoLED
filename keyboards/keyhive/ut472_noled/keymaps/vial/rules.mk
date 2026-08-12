@@ -1,10 +1,8 @@
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 
-# Reduce ROM usage for ATmega32U2.
+# AVR size reduction. Keep features required by this build.
 NO_ACTION_ONESHOT = yes
-NO_ACTION_TAPPING = yes
-NO_ACTION_LAYER = yes
 NO_ACTION_MACRO = yes
 NO_ACTION_FUNCTION = yes
 NO_MUSIC = yes
@@ -13,13 +11,15 @@ NO_VELOCIKEY = yes
 NO_COMBINED_KEYS = yes
 NO_ALT_TAB = yes
 NO_REPEAT_KEY = yes
-NO_KEY_OVERRIDE = yes
 NO_CAPS_WORD = yes
 NO_AUTO_SHIFT = yes
-NO_GRAVE_ESC = yes
 NO_MAGIC = yes
 NO_SWAP_HANDS = yes
 NO_OSM = yes
-NO_TAP_DANCE = yes
 NO_TRI_LAYER = yes
 NO_LOCKING_SUPPORT = yes
+
+# Vial features intentionally retained.
+TAP_DANCE_ENABLE = yes
+COMBO_ENABLE = yes
+KEY_OVERRIDE_ENABLE = yes
