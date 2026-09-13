@@ -51,12 +51,4 @@ UT47.2をベースに、RGB/LED機能を削除した独立Vial-QMKキーボー�
 
 ## ビルド
 
-vial-qmkのルートから:
-
-    make keyhive/ut472_noled:vial
-
-または:
-
-    qmk compile -kb keyhive/ut472_noled -km vial
-
 既存の `keyhive/ut472` とは別のキーボードとしてビルドされます。
