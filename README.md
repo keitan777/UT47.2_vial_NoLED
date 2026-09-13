@@ -17,7 +17,6 @@ UT47.2をベースに、RGB/LED機能を削除した独立Vial-QMKキーボー�
 - `keymaps/vial/config.h`: Vial UID、Unlock Combo、Macro/Combo/Tap Dance数
 - `keymaps/vial/keymap.c`: 動作確認済み4レイヤーkeymap
 - `keymaps/vial/vial.json`: Vial用キーボード定義
-- `.c` / `.h`: 使用しない
 
 ## 最終版の設定
 
